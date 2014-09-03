@@ -4,7 +4,6 @@ describe("number", function () {
         localStorage.number = "[]"
     })
 
-
     afterEach(function () {
         localStorage.clear();
     })
