@@ -6,7 +6,6 @@ function Compare_checkout(input, number) {
         }
     }
     var count_total = _.intersection(input, number).length;
-//    {1,2}
     var count_B = count_total - count_A;
     result = count_A + "A" + count_B + "B"
     return result
