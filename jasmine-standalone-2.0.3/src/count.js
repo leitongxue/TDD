@@ -7,7 +7,9 @@ function count_down(compare, count) {
         if (compare == "4A0B") {
             return "congratulations!"
         }
-        else{return compare}
+        else {
+            return compare
+        }
     }
     else {
         return "sorry,you lost!"

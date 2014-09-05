@@ -4,7 +4,7 @@ describe("count", function () {
 
     beforeEach(function () {
         localStorage.action = "false"
-        var count=1
+
     })
 
     afterEach(function () {
