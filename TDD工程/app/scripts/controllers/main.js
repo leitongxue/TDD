@@ -59,12 +59,21 @@ angular.module('abcApp')
             }
             localStorage.input_number = $scope.change
 
-            var input=localStorage.input_number
-            var numbers=localStorage.number
-            var compare = Compare_checkout(input,numbers)
+            var input = localStorage.input_number
+            var numbers = localStorage.number
+            var compare = Compare_checkout(input, numbers)
             var count = localStorage.countz
 
-            $scope.num = count_down(input, numbers, compare, count)
+            var result = count_down(input, numbers, compare, count)
+
+            $scope.num = result
+            if (result == "congratulations!" || "sorry,you lost!") {
+                localStorage.action = "false"
+                localStorage.countz = 0
+                localStorage.input_number = ""
+                localStorage.number = ""
+            }
+
             var count_down_number = localStorage.countz
             count_down_number++
             localStorage.countz = count_down_number
