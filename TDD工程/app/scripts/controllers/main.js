@@ -15,6 +15,7 @@ angular.module('abcApp')
             'Karma'
         ];
         function control() {
+
             if (localStorage.action = "true") {
                 $scope.control = true
             }
@@ -31,6 +32,25 @@ angular.module('abcApp')
             localStorage.action = "true"
         }
 
+        $scope.put_number = function () {
+            localStorage.error = "true"
+            var numb = $scope.change
+            if (numb.length == 0) {
+
+            }
+            else {
+                for (var i = 0; i < numb.length - 1; i++) {
+                    if (numb[numb.length - 1] == numb[i] || numb.length > 4) {
+                        $scope.error = "输入错误！"
+                        localStorage.error = "false"
+                    }
+                    else {
+                        $scope.error = ""
+                    }
+                }
+            }
+        }
+
 
         $scope.go_register = function () {
 
@@ -39,12 +59,12 @@ angular.module('abcApp')
             }
             localStorage.input_number = $scope.change
 
-//                var same = _.intersection( [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],localStorage.input_number)
-//            console.log(same)
-//            if(same.length==6)
+            var input=localStorage.input_number
+            var numbers=localStorage.number
+            var compare = Compare_checkout(input,numbers)
+            var count = localStorage.countz
 
-
-            $scope.num = count_down()
+            $scope.num = count_down(input, numbers, compare, count)
             var count_down_number = localStorage.countz
             count_down_number++
             localStorage.countz = count_down_number

@@ -1,7 +1,6 @@
-function Compare_checkout() {
+function Compare_checkout(input,numbers) {
 
-    var input=localStorage.input_number
-    var numbers=localStorage.number
+
     var count_A = 0
     for (var i = 0; i < 4; i++) {
         if (input[i] == numbers[i]) {
